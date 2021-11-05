@@ -101,7 +101,7 @@ public class TileSpawnerBasedOnGrid : MonoBehaviour
         TileID++;
 
         currentEnemySpawn++;
-        if (currentEnemySpawn >= EnemySpawnRate)
+        if (currentEnemySpawn >= EnemySpawnRate && EnemySpawner)
         {
             GameObject obj = Instantiate(EnemySpawner, tile.transform.Find("Plane").position, Quaternion.identity, tile.transform);
             obj.transform.position += new Vector3(0, 1, 0);
