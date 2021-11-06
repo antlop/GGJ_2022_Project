@@ -87,11 +87,27 @@ public class TileSpawnerBasedOnGrid : MonoBehaviour
         {
             tile = BaseTile;
             UsedInitialTile = true;
-        }
-        else
+        } else
         {
-            tile = Instantiate(MapTiles[0], transform);
+            GameObject tileToSpawn = null;
+
+            if (PreviousTile)
+            {
+                BaseTile prevBaseTile = PreviousTile.GetComponent<BaseTile>();
+                if (prevBaseTile)
+                {
+                    tileToSpawn = prevBaseTile.GetBaseTileToSpawn();
+                }
+            }
+
+            if( !tileToSpawn )
+            {
+                tileToSpawn = MapTiles[0];
+            }
+
+            tile = Instantiate(tileToSpawn, transform);
         }
+
         tile.transform.position = new Vector3(coord.x * SingleUnitConversion, 0, coord.y * SingleUnitConversion);
         float offsetX = Grid.baseSize.x * SingleUnitConversion * -0.5f;
         float offsetZ = Grid.baseSize.y * SingleUnitConversion * -0.5f;

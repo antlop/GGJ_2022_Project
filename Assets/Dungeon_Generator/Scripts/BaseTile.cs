@@ -38,4 +38,17 @@ public class BaseTile : MonoBehaviour
         }
         HasBeenInitialized = true;
     }
+
+    public GameObject GetBaseTileToSpawn()
+    {
+        foreach(TileSpawn spawnOption in TileIDSpawnPossibilities)
+        {
+            float percentChange = Random.Range(0f, 100f);
+            if( percentChange <= spawnOption.SpawnChance )
+            {
+                return TileDatabase.Instance.GetPrefabForObjectID(spawnOption.TileID);
+            }
+        }
+        return null;
+    }
 }
