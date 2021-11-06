@@ -3,3 +3,23 @@ Card Game (Deck bulder?)
 Platformer
 Fighting Game
 Rogue like
+
+
+
+
+Current thought about "Block-Chaining-Ancestry":
+	- Each class has a list of 'affecter's
+	- Upon passing item along to disendant the 'affecter' is chosen and applied to the item
+		- ie. the "Claymore" becomes "Brute's Claymore" and the items dmg range is increased by 2
+
+Feature creep thought:
+	- Dissownment:
+		- Each item stores a queue of 'affecter's 
+		- When the item is loaded up it applies the 'affecter's in order and cached
+		- This provides the opportunity to 'Dissown' either a specific ancestor or a whole branch of ancestors
+
+	- Events for Scribeable Runes:
+		- Provide an scripted event or challenge 
+			- ie. Make it through this gauntlet of spike traps; Kill 100 poisonous beetles in 1 life
+		- Upon completion we provide the player a 'Rune' that can be passed to ancestor (without modifying it through "block-chaining")
+		- Applying the 'Rune' can give the effect of the item having been passed along an extra time (with the current classes 'affecter's)
