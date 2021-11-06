@@ -17,7 +17,7 @@ public class PoolInitializer : MonoBehaviour
     public List<PoolObject> InitializerObjects;
     ObjectPool Pool;
 	
-	void Start()
+	void Awake()
     {
         if (Pool == null)
         {

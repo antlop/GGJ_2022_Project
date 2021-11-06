@@ -23,6 +23,11 @@ public class EnemyRacastBurstSpawner : MonoBehaviour
 
     void Spawn()
     {
+        if( !_BaseEnemyPool )
+        {
+            _BaseEnemyPool = GameObject.Find("Enemy_Object Pool").GetComponent<ObjectPool>();
+        }
+
         int currEnemiesSpawned = 0;
         for( int i = 0; i < MaxAttempts; i++)
         {
