@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 484098}
   - component: {fileID: 3393260}
   - component: {fileID: 2313562}
+  - component: {fileID: 64823594178630020}
+  - component: {fileID: 64601460046650832}
   m_Layer: 0
   m_Name: SM_Bld_Village_05
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181606}
   m_IsPrefabParent: 1
+--- !u!64 &64601460046650832
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43807981741755482, guid: ffaa6901f37af594daf63f970aff0f17, type: 2}
+--- !u!64 &64823594178630020
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43951338673497476, guid: ffaa6901f37af594daf63f970aff0f17, type: 2}

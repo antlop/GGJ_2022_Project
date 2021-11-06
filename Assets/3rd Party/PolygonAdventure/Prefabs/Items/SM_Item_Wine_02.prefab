@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 496236}
   - component: {fileID: 3393786}
   - component: {fileID: 2329258}
+  - component: {fileID: 64664462955679210}
   m_Layer: 0
   m_Name: SM_Item_Wine_02
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104650}
   m_IsPrefabParent: 1
+--- !u!64 &64664462955679210
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43556501251752840, guid: 1b06bc1ed595a854a839101c4b61b6bb, type: 2}

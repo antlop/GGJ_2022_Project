@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 436948}
   - component: {fileID: 3338170}
   - component: {fileID: 2349202}
+  - component: {fileID: 64043446686749520}
+  - component: {fileID: 64298615671803336}
   m_Layer: 0
   m_Name: SM_Bld_Stall_04
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117632}
   m_IsPrefabParent: 1
+--- !u!64 &64043446686749520
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43684190414481538, guid: 87ebff220a4a2eb4885e4440ef2bef6a, type: 2}
+--- !u!64 &64298615671803336
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43021916174260370, guid: 87ebff220a4a2eb4885e4440ef2bef6a, type: 2}

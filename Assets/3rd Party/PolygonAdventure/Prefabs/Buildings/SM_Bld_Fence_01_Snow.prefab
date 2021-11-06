@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 415316}
   - component: {fileID: 3368620}
   - component: {fileID: 2350614}
+  - component: {fileID: 64686185042476144}
+  - component: {fileID: 64701390054988254}
   m_Layer: 0
   m_Name: SM_Bld_Fence_01_Snow
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119750}
   m_IsPrefabParent: 1
+--- !u!64 &64686185042476144
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43812427997389140, guid: c6cd4150d7c9bc44299ab69d099e74d2, type: 2}
+--- !u!64 &64701390054988254
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43237328277957260, guid: c6cd4150d7c9bc44299ab69d099e74d2, type: 2}

@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 428234}
   - component: {fileID: 3369308}
   - component: {fileID: 2349546}
+  - component: {fileID: 64573590669567768}
   m_Layer: 0
   m_Name: SM_Item_Gourd_01
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188336}
   m_IsPrefabParent: 1
+--- !u!64 &64573590669567768
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43852241868072160, guid: 09161815f0154904bbf453f7f01659b9, type: 2}

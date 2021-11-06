@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 451620}
   - component: {fileID: 3377074}
   - component: {fileID: 2362138}
+  - component: {fileID: 64925471597649556}
   m_Layer: 0
   m_Name: SM_Item_Waterskin_01
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181616}
   m_IsPrefabParent: 1
+--- !u!64 &64925471597649556
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43118022094484082, guid: dfc8098d04110c44a91b8816f541dc77, type: 2}

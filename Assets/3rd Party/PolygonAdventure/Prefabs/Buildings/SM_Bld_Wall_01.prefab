@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 448950}
   - component: {fileID: 3309804}
   - component: {fileID: 2363520}
+  - component: {fileID: 64099828320158938}
   m_Layer: 0
   m_Name: SM_Bld_Wall_01
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113512}
   m_IsPrefabParent: 1
+--- !u!64 &64099828320158938
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43398712748928532, guid: ad3a54cb4d1546e42aac9fca4d3a30a5, type: 2}

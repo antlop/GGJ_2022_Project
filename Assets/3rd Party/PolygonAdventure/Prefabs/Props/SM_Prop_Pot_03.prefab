@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 463522}
   - component: {fileID: 3313704}
   - component: {fileID: 2317204}
+  - component: {fileID: 64573268273114466}
+  - component: {fileID: 64692779277328344}
   m_Layer: 0
   m_Name: SM_Prop_Pot_03
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 150188}
   m_IsPrefabParent: 1
+--- !u!64 &64573268273114466
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43079996077011012, guid: c540e88ecb930234c8cdfa3e9551c1d6, type: 2}
+--- !u!64 &64692779277328344
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43974206778403402, guid: c540e88ecb930234c8cdfa3e9551c1d6, type: 2}

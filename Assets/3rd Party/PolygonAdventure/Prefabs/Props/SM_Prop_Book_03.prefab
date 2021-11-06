@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 448148}
   - component: {fileID: 3339960}
   - component: {fileID: 2302814}
+  - component: {fileID: 65115113647101534}
   m_Layer: 0
   m_Name: SM_Prop_Book_03
   m_TagString: Untagged
@@ -80,3 +81,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 140880}
   m_IsPrefabParent: 1
+--- !u!65 &65115113647101534
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37778524, y: 0.15152729, z: 0.29135698}
+  m_Center: {x: -0.000000029802322, y: 0.07576364, z: 0.00000017136335}

@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 472262}
   - component: {fileID: 3386356}
   - component: {fileID: 2377320}
+  - component: {fileID: 64098198518414590}
   m_Layer: 0
   m_Name: SM_Item_Fruit_01
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105638}
   m_IsPrefabParent: 1
+--- !u!64 &64098198518414590
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43341715723715762, guid: 4fd0c6acea58cb94c80da8dc9cf07cd4, type: 2}

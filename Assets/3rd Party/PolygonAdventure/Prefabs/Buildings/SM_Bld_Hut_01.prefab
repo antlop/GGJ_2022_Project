@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 477682}
   - component: {fileID: 3357048}
   - component: {fileID: 2360404}
+  - component: {fileID: 64445377415024650}
+  - component: {fileID: 64407337312281004}
   m_Layer: 0
   m_Name: SM_Bld_Hut_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187846}
   m_IsPrefabParent: 1
+--- !u!64 &64407337312281004
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43466950791932432, guid: 645e672f93a1a14478b693736f184b56, type: 2}
+--- !u!64 &64445377415024650
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43347214853881562, guid: 645e672f93a1a14478b693736f184b56, type: 2}

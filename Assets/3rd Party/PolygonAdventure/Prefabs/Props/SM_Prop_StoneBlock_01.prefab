@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 457164}
   - component: {fileID: 3310782}
   - component: {fileID: 2399162}
+  - component: {fileID: 65240998923440492}
   m_Layer: 0
   m_Name: SM_Prop_StoneBlock_01
   m_TagString: Untagged
@@ -80,3 +81,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133642}
   m_IsPrefabParent: 1
+--- !u!65 &65240998923440492
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.68614715, y: 0.32582545, z: 0.47329885}
+  m_Center: {x: 0, y: 0.1629127, z: -0.000000014901161}

@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 445954}
   - component: {fileID: 3304602}
   - component: {fileID: 2324016}
+  - component: {fileID: 64426804835714858}
+  - component: {fileID: 64303632144299114}
   m_Layer: 0
   m_Name: SM_Prop_Basket_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196528}
   m_IsPrefabParent: 1
+--- !u!64 &64303632144299114
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43765003767489258, guid: 435ff12e10f975749aaa3b97a147abad, type: 2}
+--- !u!64 &64426804835714858
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43826812117564560, guid: 435ff12e10f975749aaa3b97a147abad, type: 2}

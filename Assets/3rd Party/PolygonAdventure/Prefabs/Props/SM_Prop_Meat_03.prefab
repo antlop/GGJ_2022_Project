@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 413974}
   - component: {fileID: 3310430}
   - component: {fileID: 2331582}
+  - component: {fileID: 64318024653346518}
   m_Layer: 0
   m_Name: SM_Prop_Meat_03
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169300}
   m_IsPrefabParent: 1
+--- !u!64 &64318024653346518
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43202519534747854, guid: 20f0e209277686440896cc05bf80a6e6, type: 2}

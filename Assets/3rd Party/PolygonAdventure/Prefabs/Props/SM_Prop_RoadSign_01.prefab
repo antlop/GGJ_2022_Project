@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 488274}
   - component: {fileID: 3328940}
   - component: {fileID: 2398568}
+  - component: {fileID: 64942772111327128}
+  - component: {fileID: 64325927360709806}
   m_Layer: 0
   m_Name: SM_Prop_RoadSign_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125860}
   m_IsPrefabParent: 1
+--- !u!64 &64325927360709806
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43847140304600080, guid: 4bd965536bc3fd043afffb92eb4ef0a5, type: 2}
+--- !u!64 &64942772111327128
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43348403264331508, guid: 4bd965536bc3fd043afffb92eb4ef0a5, type: 2}

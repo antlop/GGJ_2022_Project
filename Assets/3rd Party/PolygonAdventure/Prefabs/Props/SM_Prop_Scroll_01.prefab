@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 486210}
   - component: {fileID: 3350050}
   - component: {fileID: 2378366}
+  - component: {fileID: 64395421579861210}
+  - component: {fileID: 64075129498273420}
   m_Layer: 0
   m_Name: SM_Prop_Scroll_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145252}
   m_IsPrefabParent: 1
+--- !u!64 &64075129498273420
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43579619296493812, guid: 66b84f7314925364e87b8b53cbddad6b, type: 2}
+--- !u!64 &64395421579861210
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43269433418495324, guid: 66b84f7314925364e87b8b53cbddad6b, type: 2}

@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 424638}
   - component: {fileID: 3340404}
   - component: {fileID: 2380210}
+  - component: {fileID: 64115629096091982}
   m_Layer: 0
   m_Name: SM_Prop_Basket_04
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125560}
   m_IsPrefabParent: 1
+--- !u!64 &64115629096091982
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43569758537415600, guid: c0b58bd397a065240aecfecbf324ff35, type: 2}

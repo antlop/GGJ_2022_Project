@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 471922}
   - component: {fileID: 3393896}
   - component: {fileID: 2383164}
+  - component: {fileID: 64211180031026282}
+  - component: {fileID: 64187038254739774}
   m_Layer: 0
   m_Name: SM_Prop_Washingline_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 144652}
   m_IsPrefabParent: 1
+--- !u!64 &64187038254739774
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43383098521000306, guid: 1fa90fdf24d8f5a4e85d37affaea18f2, type: 2}
+--- !u!64 &64211180031026282
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43395209352025690, guid: 1fa90fdf24d8f5a4e85d37affaea18f2, type: 2}

@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 471036}
   - component: {fileID: 3382552}
   - component: {fileID: 2381544}
+  - component: {fileID: 64785022577025284}
   m_Layer: 0
   m_Name: SM_Prop_Cheese_03
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102338}
   m_IsPrefabParent: 1
+--- !u!64 &64785022577025284
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43647869415994856, guid: 3a97e1dbce5e9954189a52453f1727f1, type: 2}

@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 402012}
   - component: {fileID: 3306008}
   - component: {fileID: 2387520}
+  - component: {fileID: 64130448509140534}
   m_Layer: 0
   m_Name: SM_Prop_Sack_04
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129324}
   m_IsPrefabParent: 1
+--- !u!64 &64130448509140534
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43859160610876734, guid: 4b3cc099e724a1040a6e89cca109a7b9, type: 2}

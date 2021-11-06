@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 494586}
   - component: {fileID: 3393510}
   - component: {fileID: 2312072}
+  - component: {fileID: 65460358727381746}
   m_Layer: 0
   m_Name: SM_Bld_Village_Top_01
   m_TagString: Untagged
@@ -80,3 +81,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126444}
   m_IsPrefabParent: 1
+--- !u!65 &65460358727381746
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126444}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5760274, y: 0.3424179, z: 4.326947}
+  m_Center: {x: 0.00000017881393, y: 0.17120895, z: -0.00000059604645}

@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 489404}
   - component: {fileID: 3376292}
   - component: {fileID: 2309798}
+  - component: {fileID: 64885853780235542}
   m_Layer: 0
   m_Name: SM_Item_Pouch_01
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187504}
   m_IsPrefabParent: 1
+--- !u!64 &64885853780235542
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43969006961911266, guid: 5dee8c6ad8c57a84583b51ac2e5b227d, type: 2}

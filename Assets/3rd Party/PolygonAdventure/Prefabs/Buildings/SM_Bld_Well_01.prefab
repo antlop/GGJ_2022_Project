@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 402088}
   - component: {fileID: 3357828}
   - component: {fileID: 2351280}
+  - component: {fileID: 64562824749330242}
+  - component: {fileID: 64703155668254076}
   m_Layer: 0
   m_Name: SM_Bld_Well_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117314}
   m_IsPrefabParent: 1
+--- !u!64 &64562824749330242
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43723018295655630, guid: 5ad67ff3fd7030142ba7ee25a8df769d, type: 2}
+--- !u!64 &64703155668254076
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43245694291277164, guid: 5ad67ff3fd7030142ba7ee25a8df769d, type: 2}

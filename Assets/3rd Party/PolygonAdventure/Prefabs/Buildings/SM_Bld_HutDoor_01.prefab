@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 481836}
   - component: {fileID: 3387850}
   - component: {fileID: 2348594}
+  - component: {fileID: 65243826667218180}
   m_Layer: 0
   m_Name: SM_Bld_HutDoor_01
   m_TagString: Untagged
@@ -80,3 +81,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 119998}
   m_IsPrefabParent: 1
+--- !u!65 &65243826667218180
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82386476, y: 1.912599, z: 0.09539795}
+  m_Center: {x: -0.4013916, y: 0.9562995, z: 0}

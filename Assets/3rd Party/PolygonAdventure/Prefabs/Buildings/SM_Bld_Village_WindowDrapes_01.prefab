@@ -10,6 +10,8 @@ GameObject:
   - component: {fileID: 430036}
   - component: {fileID: 3353836}
   - component: {fileID: 2396566}
+  - component: {fileID: 64365250711501464}
+  - component: {fileID: 64782897086648656}
   m_Layer: 0
   m_Name: SM_Bld_Village_WindowDrapes_01
   m_TagString: Untagged
@@ -80,3 +82,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 137840}
   m_IsPrefabParent: 1
+--- !u!64 &64365250711501464
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43237781920940208, guid: 2eb9255b3afca264685d8287f29decae, type: 2}
+--- !u!64 &64782897086648656
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43607891569585844, guid: 2eb9255b3afca264685d8287f29decae, type: 2}

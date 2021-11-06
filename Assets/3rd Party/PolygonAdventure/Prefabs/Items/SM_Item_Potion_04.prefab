@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 431832}
   - component: {fileID: 3315730}
   - component: {fileID: 2389418}
+  - component: {fileID: 64970724755522046}
   m_Layer: 0
   m_Name: SM_Item_Potion_04
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172702}
   m_IsPrefabParent: 1
+--- !u!64 &64970724755522046
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43102783267854780, guid: 44e6295509848d84db8f3ddad4304ffa, type: 2}

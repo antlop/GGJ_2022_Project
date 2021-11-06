@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 429710}
   - component: {fileID: 3397928}
   - component: {fileID: 2328730}
+  - component: {fileID: 64927558433158318}
   m_Layer: 0
   m_Name: SM_Item_Lantern_01
   m_TagString: Untagged
@@ -80,3 +81,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 150698}
   m_IsPrefabParent: 1
+--- !u!64 &64927558433158318
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 43689576357951492, guid: b4342993aad4510459b9c9f19ddf1833, type: 2}
