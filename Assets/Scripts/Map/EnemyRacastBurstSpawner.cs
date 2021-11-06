@@ -11,9 +11,12 @@ public class EnemyRacastBurstSpawner : MonoBehaviour
 
     private int MaxAttempts = 0;
 
+    private ObjectPool _BaseEnemyPool;
+
     // Start is called before the first frame update
     void Start()
     {
+        _BaseEnemyPool = GameObject.Find("Enemy_Object Pool").GetComponent<ObjectPool>();
         MaxAttempts = EnemiesToSpawn * 3;
         Invoke("Spawn", SpawnDelay);
     }
@@ -31,7 +34,7 @@ public class EnemyRacastBurstSpawner : MonoBehaviour
             {
                 if( hit.transform.tag != "SpawnedEnemy")
                 {
-                    GameObject obj = Instantiate(BaseEnemy, Vector3.zero, Quaternion.identity);
+                    GameObject obj = _BaseEnemyPool.GetObject("Base Enemy");// Instantiate(BaseEnemy, Vector3.zero, Quaternion.identity);
                     obj.SetActive(false);
                     obj.transform.position = hit.transform.position - (dir * 1.5f);
                     obj.SetActive(true);
