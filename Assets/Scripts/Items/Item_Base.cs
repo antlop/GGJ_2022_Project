@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public enum SLOT
 {
     ONE_H_WEAPON,
@@ -12,6 +13,7 @@ public enum SLOT
     unslotted
 }
 
+[System.Serializable]
 public struct StatObject
 {
     public string StatName; // ie "Health", "Speed", "MinDamage", "GlobalDamage"
@@ -43,53 +45,56 @@ public struct StatObject
     }
 }
 
+[System.Serializable]
 public struct Affecter
 {
     public string NameModifier;
     public SLOT Slot;
     public bool IsPrefix;
+    public int ID;
     public List<StatObject> StatModifiers;
 
-    public Affecter(string name, SLOT slot, List<StatObject> stats, bool prefix = false)
+    public Affecter(string name, SLOT slot, List<StatObject> stats, bool prefix = false, int id = -1)
     {
         NameModifier = name;
         Slot = slot;
         StatModifiers = stats;
         IsPrefix = prefix;
+        ID = id;
     }
 }
 
-public class Item_Base : MonoBehaviour
+[System.Serializable]
+public class Item_Base
 {
-    private string _name_p = "Default";
-    [SerializeField]
-    private Queue<Affecter> _affecters_p;
+    public string _name_p;
+    // [SerializeField] public Queue<Affecter> _affecters_p;
     public SLOT EquipmentSlot = SLOT.unslotted;
+    public int ItemID = -1;
+    public List<int> Affecters;
 
-    public int ItemPrefab_ID = -1;
-
-    Item_Base(string initialName)
+    public Item_Base(string initialName)
     {
         _name_p = initialName;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _name_p = "Greataxe";   // TEMP for testing
-        _affecters_p = new Queue<Affecter>();
+        //    _affecters_p = new Queue<Affecter>();
+        Affecters = new List<int>();
     }
 
     public void AddAffector(Affecter affecter)
     {
-        _affecters_p.Enqueue(affecter);
+    //    _affecters_p.Enqueue(affecter);
+    }
+
+    public void AddAffecter(int affecterID)
+    {
+        Affecters.Add(affecterID);
     }
 
     public string GetItemName()
     {
         string name = _name_p;
 
-        foreach (Affecter affecter in _affecters_p)
+    /*    foreach (Affecter affecter in _affecters_p)
         {
             if (affecter.IsPrefix)
             {
@@ -100,7 +105,23 @@ public class Item_Base : MonoBehaviour
                 name += " " + affecter.NameModifier;
             }
         }
+    */
+
+        for(int i = 0; i < Affecters.Count; i++)
+        {
+            Affecter affecter = AffectersDatabase.Instance.GetAffecterWithID(Affecters[i]);
+
+            if( affecter.IsPrefix)
+            {
+                name = affecter.NameModifier + " " + name;
+            } else
+            {
+                name += " " + affecter.NameModifier;
+            }
+        }
 
         return name;
     }
+
+   
 }

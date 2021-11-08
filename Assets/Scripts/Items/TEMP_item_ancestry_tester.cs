@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class TEMP_item_ancestry_tester : MonoBehaviour
 {
+    public int heirloomID;
     public Item_Base Heirloom;
     public TMPro.TextMeshProUGUI NameText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Heirloom = BaseItemDatabase.Instance.GetItemWithID(heirloomID);
     }
 
 
     int clickCount = 0;
     public void SetItemNameToUI()
     {
-        if( Heirloom && NameText)
+        if( Heirloom != null && NameText)
         {
             NameText.text = Heirloom.GetItemName();
 
@@ -34,6 +35,9 @@ public class TEMP_item_ancestry_tester : MonoBehaviour
                     break;
                 case 2:
                     Heirloom.AddAffector(new Affecter(", kingslayer", SLOT.ONE_H_WEAPON, statmods, false));
+                    break;
+                case 4:
+            //        Item_Prefab_Database.Instance.DatabaseStruct.BaseItemsDatabaseList.Add(Heirloom);
                     break;
                 default:
                     break;
