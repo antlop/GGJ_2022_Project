@@ -175,6 +175,31 @@ MonoBehaviour:
     - StatName: Health
       Values:
       - 20
+  - NameModifier: Fiery
+    Slot: 0
+    IsPrefix: 1
+    ID: 1
+    StatModifiers:
+    - StatName: Damage Type
+      Values:
+      - 2
+      - 20
+  - NameModifier: of the Warlord
+    Slot: 0
+    IsPrefix: 0
+    ID: 9
+    StatModifiers:
+    - StatName: Strength
+      Values:
+      - 5
+  - NameModifier: Great
+    Slot: 1
+    IsPrefix: 1
+    ID: 13
+    StatModifiers:
+    - StatName: Rarety
+      Values:
+      - 1
 --- !u!4 &117761016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1246742265075566051, guid: 70b2e678b3e3e004d969d1fbcfeec64c, type: 3}
@@ -1623,7 +1648,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080323988}
-  m_LocalRotation: {x: 0.502237, y: -0.000000014878873, z: 0.000000008641682, w: 0.86473}
+  m_LocalRotation: {x: 0.502237, y: 0.000000014878873, z: -0.000000008641682, w: 0.86473}
   m_LocalPosition: {x: 3.3124647, y: 10.08, z: -0.04179907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2304,7 +2329,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.502237, y: -0.000000014878873, z: 0.000000008641682, w: 0.86473}
+  m_LocalRotation: {x: 0.502237, y: 0.000000014878873, z: -0.000000008641682, w: 0.86473}
   m_LocalPosition: {x: 3.3124647, y: 10.08, z: -0.04179907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
