@@ -14,6 +14,14 @@ public class TEMP_item_ancestry_tester : MonoBehaviour
         Heirloom = BaseItemDatabase.Instance.GetItemWithID(heirloomID);
     }
 
+    private void LateUpdate()
+    {
+        if( Heirloom == null )
+        {
+            Heirloom = BaseItemDatabase.Instance.GetItemWithID(heirloomID);
+        }
+    }
+
 
     int clickCount = 0;
     public void SetItemNameToUI()

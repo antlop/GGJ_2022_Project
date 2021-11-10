@@ -1992,11 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18107f7cb7e8ba244a8757455a996841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Database_of_base_items:
-  - _name_p: Greataxe
-    EquipmentSlot: 0
-    ItemID: 11
-    Affecters: 0e000000
+  Database_of_base_items: []
 --- !u!1 &1474427091
 GameObject:
   m_ObjectHideFlags: 0
