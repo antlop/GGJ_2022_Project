@@ -61,6 +61,7 @@ public struct Affecter
         StatModifiers = stats;
         IsPrefix = prefix;
         ID = id;
+
     }
 }
 
@@ -68,9 +69,12 @@ public struct Affecter
 public class Item_Base
 {
     public string _name_p;
-    // [SerializeField] public Queue<Affecter> _affecters_p;
-    public SLOT EquipmentSlot = SLOT.unslotted;
-    public int ItemID = -1;
+    public SLOT Item_Slot = SLOT.unslotted;
+    public int Item_ID = -1;
+    public int Modifier; //weapons = haste
+    public int[] Stat_Range; //weapons = damage; armor = rollable armour value
+    public int Mesh_ID;
+
     public List<int> Affecters;
 
     public Item_Base(string initialName)

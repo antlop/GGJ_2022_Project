@@ -630,8 +630,11 @@ MonoBehaviour:
   heirloomID: 11
   Heirloom:
     _name_p: 
-    EquipmentSlot: 0
-    ItemID: 0
+    Item_Slot: 0
+    Item_ID: 0
+    Modifier: 0
+    Stat_Range: 
+    Mesh_ID: 0
     Affecters: 
   NameText: {fileID: 871084149}
 --- !u!1 &434482958
@@ -1992,7 +1995,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18107f7cb7e8ba244a8757455a996841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Database_of_base_items: []
+  Items_Database:
+    Items: []
+    Count: 0
+    ScannedCount: 0
 --- !u!1 &1474427091
 GameObject:
   m_ObjectHideFlags: 0
