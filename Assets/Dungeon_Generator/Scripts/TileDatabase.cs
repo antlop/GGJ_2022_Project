@@ -35,7 +35,8 @@ public class TileDatabase : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        if(this.transform.parent == null)
+            DontDestroyOnLoad(this.gameObject);
     }
     #endregion
 

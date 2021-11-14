@@ -26,7 +26,8 @@ public class AffectersDatabase : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        if(this.transform.parent == null)
+            DontDestroyOnLoad(this.gameObject);
     }
     #endregion
 

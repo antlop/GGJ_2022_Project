@@ -42,7 +42,8 @@ public class BaseItemDatabase : MonoBehaviour
         }
 
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        if(this.transform.parent == null)
+            DontDestroyOnLoad(this.gameObject);
     }
     #endregion
     public ItemDBSerializer Items_Database;

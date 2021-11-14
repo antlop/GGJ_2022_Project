@@ -7,7 +7,7 @@ public class EnemyRacastBurstSpawner : MonoBehaviour
     public GameObject BaseEnemy;
 
     public int EnemiesToSpawn = 0;
-    public float SpawnDelay = 0.1f;
+    public float SpawnDelay = 0.5f;
 
     private int MaxAttempts = 0;
 
@@ -31,6 +31,7 @@ public class EnemyRacastBurstSpawner : MonoBehaviour
         int currEnemiesSpawned = 0;
         for( int i = 0; i < MaxAttempts; i++)
         {
+            //TODO: I am not sure this is doing what we think it's doing.   Going to put in some debug draw calls to test this la
             RaycastHit hit;
             float x = Random.Range(-180, 180);
             float z = Random.Range(-180, 180);
@@ -39,10 +40,16 @@ public class EnemyRacastBurstSpawner : MonoBehaviour
             {
                 if( hit.transform.tag != "SpawnedEnemy")
                 {
-                    GameObject obj = _BaseEnemyPool.GetObject("Base Enemy");// Instantiate(BaseEnemy, Vector3.zero, Quaternion.identity);
+                    GameObject obj = _BaseEnemyPool.GetObject("Base Enemy");
                     obj.SetActive(false);
                     obj.transform.position = hit.transform.position - (dir * 1.5f);
                     obj.SetActive(true);
+
+                    BaseComponentController componentController = obj.GetComponent<BaseComponentController>();
+                    if (componentController != null)
+                    {
+                        componentController.ActivateObject();
+                    }
                     obj.tag = "SpawnedEnemy";
                     currEnemiesSpawned++;
                 }
