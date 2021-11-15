@@ -622,6 +622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _savedMaps: []
+  _stagedMaps: []
+  SaveFileName: SavedMaps
 --- !u!1 &186451478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2053,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 590618066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 898143864}
+        m_TargetAssemblyTypeName: WFC_Editor, Assembly-CSharp
+        m_MethodName: SaveMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &590618066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3668,6 +3682,7 @@ MonoBehaviour:
   MapSizeY: {fileID: 1204400424}
   Seed: {fileID: 1184248096}
   WFC: {fileID: 169234292}
+  WFC_Managment: {fileID: 169234294}
 --- !u!1 &908150175
 GameObject:
   m_ObjectHideFlags: 0
