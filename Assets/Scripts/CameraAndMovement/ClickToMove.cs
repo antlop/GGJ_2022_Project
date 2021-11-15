@@ -38,7 +38,11 @@ public class ClickToMove : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
-            ShouldCheckForTargetPosition = true;
+            if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            {
+                ShouldCheckForTargetPosition = true;
+            }
+
         }
         if (Input.GetMouseButtonUp(0))
         {

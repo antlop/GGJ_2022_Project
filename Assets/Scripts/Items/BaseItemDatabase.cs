@@ -4,6 +4,7 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.Net;
 using System.IO;
+using UnityEngine.Networking;
 
 [System.Serializable]
 public class ItemDBSerializer
@@ -47,7 +48,6 @@ public class BaseItemDatabase : MonoBehaviour
     }
     #endregion
     public ItemDBSerializer Items_Database;
-    string DatabaseLocation = "/Items_Database.json";
 
     void Start()
     {
@@ -70,15 +70,18 @@ public class BaseItemDatabase : MonoBehaviour
 
 
     public void Save()
-    {
+    {/*
         string json = JsonConvert.SerializeObject(Items_Database.Items);
         string location = Application.persistentDataPath + DatabaseLocation;
         System.IO.File.WriteAllText(location, json);
+        */
     }
 
     void Load()
     {
         // WE ONLINE, MUTHA TRUCKA!
+
+                //UnityWebRequest.Post();
 
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://ow42fhkx0j.execute-api.us-east-1.amazonaws.com/Items");
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
