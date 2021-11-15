@@ -50,7 +50,6 @@ public class Map2D : MonoBehaviour
             {
                 return false;
             }
-            return Map[x, y] == (int)MapType.EMPTY;
         }
         return false;
     }
