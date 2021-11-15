@@ -16,7 +16,7 @@ public class MovingTrap : MonoBehaviour
     {
         if(ArrayContainsTag(collision.transform.tag))
         {
-            GameObject particleObj = Instantiate(CollisionParticle.gameObject, new Vector3(0f, 0.5f, 0f), Quaternion.identity, collision.transform);
+            GameObject particleObj = Instantiate(CollisionParticle.gameObject, new Vector3(0f, 0.5f, 0f) + collision.transform.position, Quaternion.identity, collision.transform);
             Destroy(particleObj, CollisionParticle.main.duration + 1);
         }
     }
@@ -25,7 +25,7 @@ public class MovingTrap : MonoBehaviour
     {
         if (ArrayContainsTag(other.transform.tag))
         {
-            GameObject particleObj = Instantiate(CollisionParticle.gameObject, new Vector3(0f, 0.5f, 0f), Quaternion.identity, other.transform);
+            GameObject particleObj = Instantiate(CollisionParticle.gameObject, new Vector3(0f, 0.5f, 0f) + other.transform.position, Quaternion.identity, other.transform);
             Destroy(particleObj, CollisionParticle.main.duration + 1);
         }
     }

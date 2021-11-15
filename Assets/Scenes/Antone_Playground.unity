@@ -249,6 +249,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12112644}
   m_CullTransparentMesh: 1
+--- !u!1 &62661456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1246742265075566048, guid: 70b2e678b3e3e004d969d1fbcfeec64c, type: 3}
+  m_PrefabInstance: {fileID: 1119245209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &62661457
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62661456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.1268342
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.971197, z: 0}
 --- !u!1 &84015406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,6 +1388,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416731198}
   m_CullTransparentMesh: 1
+--- !u!1 &421874670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5655556357951429013, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
+  m_PrefabInstance: {fileID: 5655556358100013691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &421874674
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421874670}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &434482958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4719,7 +4759,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080323988}
-  m_LocalRotation: {x: 0.502237, y: 0.000000014878873, z: -0.000000008641682, w: 0.86473}
+  m_LocalRotation: {x: 0.502237, y: -0.000000014878873, z: 0.000000008641682, w: 0.86473}
   m_LocalPosition: {x: 3.3124647, y: 10.08, z: -0.04179907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8104,7 +8144,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.502237, y: 0.000000014878873, z: -0.000000008641682, w: 0.86473}
+  m_LocalRotation: {x: 0.502237, y: -0.000000014878873, z: 0.000000008641682, w: 0.86473}
   m_LocalPosition: {x: 3.3124647, y: 10.08, z: -0.04179907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9688,6 +9728,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5655556357951429002, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
+      propertyPath: CollisionParticle
+      value: 
+      objectReference: {fileID: 198615267133080452, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
+    - target: {fileID: 5655556357951429002, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
+      propertyPath: CollidableTags.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655556357951429002, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
+      propertyPath: CollidableTags.Array.data[0]
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5655556359871264031, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
       propertyPath: m_Name
       value: SM_Trap_Saw_Rail_01
@@ -9698,7 +9750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5655556359871511087, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.379
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 5655556359871511087, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9706,7 +9758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5655556359871511087, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7377627
+      value: 7.37
       objectReference: {fileID: 0}
     - target: {fileID: 5655556359871511087, guid: 6f4b44b91307d1646893c3c396934378, type: 3}
       propertyPath: m_LocalRotation.w
