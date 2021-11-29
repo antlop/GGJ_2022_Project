@@ -16,7 +16,8 @@ public enum SLOT
 [System.Serializable]
 public struct StatObject
 {
-    public string StatName; // ie "Health", "Speed", "MinDamage", "GlobalDamage"
+    public string StatName; // ie "Health", "
+                            // ", "MinDamage", "GlobalDamage"
     public List<float> Values;
 
     public StatObject(string name, List<float> values)

@@ -234,7 +234,13 @@ public class WFC_Tiles : MonoBehaviour
                             if (!CheckWallRestrictions(adjustedCoords,neighbour) && neighbour == validNeighbour && !indiciesToMaintain.Contains(validNeighbour))
                             {
                                 indiciesToMaintain.Add(validNeighbour);
+                                
                             }
+                        }
+
+                        if (indiciesToMaintain.Count < 1)
+                        {
+                            Debug.Log("Issue found at: " + adjustedCoords);
                         }
                     }
                 }
@@ -265,6 +271,10 @@ public class WFC_Tiles : MonoBehaviour
 
             Vector2 coords = new Vector2(mapIndiciesStillInASuperposition[0] % MapSize.x, mapIndiciesStillInASuperposition[0] / MapSize.x);
             int randIndex = Random.Range(0, _map[(int)coords.x, (int)coords.y].Sockets[0].valid_neighbours.Count);
+            if(_map[(int)coords.x, (int)coords.y].Sockets[0].valid_neighbours.Count < 1)
+            {
+                Debug.Log("no neighbors found at " + coords);
+            }
             int prototypeID = _map[(int)coords.x, (int)coords.y].Sockets[0].valid_neighbours[randIndex];
             AssignPrototypeToMapCell(coords, prototypeID);
             StartTheGenerationProcess(coords);
