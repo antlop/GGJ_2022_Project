@@ -77,6 +77,9 @@ public class WFC_Tiles : MonoBehaviour
     bool _startingNewMap = true;
     GameObject parentToMap;
 
+    public bool _ShouldLoad = false;
+    public bool _ShouldSave = false;
+
     private void Awake()
     {
 
@@ -89,6 +92,8 @@ public class WFC_Tiles : MonoBehaviour
 
     bool Load()
     {
+        if(!_ShouldLoad) { return false; }
+
         string location = Application.persistentDataPath + "/WFC_Tiles";
         string jsonDB = System.IO.File.ReadAllText(location);
         if (jsonDB.Length > 0)
@@ -103,8 +108,11 @@ public class WFC_Tiles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!Load())
+        
+
+        if (!Load() || _ShouldSave)
         {
+
             string json = JsonConvert.SerializeObject(prototypeTiles);
             string location = Application.persistentDataPath + "/WFC_Tiles";
             System.IO.File.WriteAllText(location, json);
@@ -113,7 +121,7 @@ public class WFC_Tiles : MonoBehaviour
 
 
         // ****** TESTING *******
-        
+        /*
         for (int i = 0; i < 4; i++) {
 
             prototypeTiles[0].Sockets[i].valid_neighbours = new List<int>();
@@ -131,7 +139,7 @@ public class WFC_Tiles : MonoBehaviour
           prototypeTiles[0].Sockets[i].valid_neighbours.Add(11);
           prototypeTiles[0].Sockets[i].valid_neighbours.Add(12);
         }
-
+        */
         // **********************
 
 
@@ -195,7 +203,7 @@ public class WFC_Tiles : MonoBehaviour
         int randx = Random.Range(0, MapSize.x);
         int randy = Random.Range(0, MapSize.y);
 
-        AssignPrototypeToMapCell(new Vector2(randx, randy), Random.Range(0, prototypeTiles.Length));
+        AssignPrototypeToMapCell(new Vector2(randx, randy), 0);// Random.Range(0, prototypeTiles.Length));
         StartTheGenerationProcess(new Vector2(randx, randy));
     }
 
@@ -245,10 +253,10 @@ public class WFC_Tiles : MonoBehaviour
                     }
                 }
 
-                if(indiciesToMaintain.Count == 1)
-                {
-                    AssignPrototypeToMapCell(adjustedCoords, indiciesToMaintain[0]);
-                } else
+                //if(indiciesToMaintain.Count == 1)
+                //{
+                //    AssignPrototypeToMapCell(adjustedCoords, indiciesToMaintain[0]);
+                //} else
                 {
                     if( indiciesToMaintain.Count != _map[(int)adjustedCoords.x, (int)adjustedCoords.y].Sockets[0].valid_neighbours.Count)
                     {
@@ -333,6 +341,8 @@ public class WFC_Tiles : MonoBehaviour
             _map[(int)mapIndex.x, (int)mapIndex.y].MeshRotation = prototypeTiles[prototypeIndex].MeshRotation;
             _map[(int)mapIndex.x, (int)mapIndex.y].TileID = prototypeTiles[prototypeIndex].TileID;
 
+            _map[(int)mapIndex.x, (int)mapIndex.y].Sockets = prototypeTiles[prototypeIndex].Sockets;
+
             mapIndiciesStillInASuperposition.Remove((int)(mapIndex.x + MapSize.x * mapIndex.y));
         }
     }
@@ -360,11 +370,14 @@ public class WFC_Tiles : MonoBehaviour
 
     void SpawnMapGameObjects()
     {
+
+        string printLine = "";
         for (int x = 0; x < MapSize.x; x++)
         {
             for(int y = 0; y < MapSize.y; y++)
             {
                 WFC_Tile tile = _map[x, y];
+                printLine += tile.TileID + " ";
                 GameObject obj = Instantiate(prefabs[tile.TileID], new Vector3(x * PlacementOffset.x, 0, y * PlacementOffset.y), Quaternion.identity);
 
                
@@ -386,7 +399,9 @@ public class WFC_Tiles : MonoBehaviour
 
                 obj.transform.parent = parentToMap.transform;
             }
+            printLine += "\n";
         }
+        Debug.Log("Map: \n" + printLine);
     }
 
     bool CheckWallRestrictions(Vector2 coord, int tileID)

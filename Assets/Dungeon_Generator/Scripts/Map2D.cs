@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum MapType { EMPTY, FILLED };
+enum MapType { EMPTY, FILLED, UN_MERGEABLE, MAPTYPE_MAX };
 
 public class Map2D : MonoBehaviour
 {
@@ -32,6 +32,37 @@ public class Map2D : MonoBehaviour
             }
         }
         Initialized = true;
+
+
+    }
+
+        /// TEMP FOR TESTING
+    public void AssingTempMapForTesting()
+    {
+        baseSize = new Vector2(20,20);
+        Map = new int[,] {  
+            { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+        };
     }
 
     public bool CheckIfCoordinatesFilled(int x, int y)
@@ -54,7 +85,7 @@ public class Map2D : MonoBehaviour
         return false;
     }
 
-    public void FillCoordinatesInMap(int x, int y)
+    public void FillCoordinatesInMap(int x, int y, int type)
     {
         if (Map == null) { InitializeMap(); }
 
@@ -68,7 +99,7 @@ public class Map2D : MonoBehaviour
                 Debug.Log("Duplicate at: (" + x + "," + y + ")");
             }
 
-            Map[x, y] = (int)MapType.FILLED;
+            Map[x, y] = type;
         }
     }
 
@@ -93,13 +124,29 @@ public class Map2D : MonoBehaviour
                 {
                     returnstring += "[  ]";
                 }
+                else if( (int)Map[x,y] == (int)MapType.UN_MERGEABLE)
+                {
+                    returnstring += "[U]";
+                }
                 else
                 {
-                    returnstring += "[x]";
+                    returnstring += "[" + (int)Map[x,y] + "]";
                 }
             }
             returnstring += "\n";
         }
         return returnstring;
+    }
+
+    public int GetMapTypeAtCoords(Vector2Int coords)
+    {
+        if(coords.x < 0 || 
+            coords.x > baseSize.x ||
+            coords.y < 0 || 
+            coords.y > baseSize.y)
+        {
+            return (int)MapType.EMPTY;
+        }
+        return (int)Map[coords.x, coords.y];
     }
 }
