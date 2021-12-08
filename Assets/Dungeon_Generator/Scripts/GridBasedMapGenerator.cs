@@ -21,6 +21,8 @@ public class GridBasedMapGenerator : MonoBehaviour
     private int CurrentDepth = 0;
     private TileSpawnerBasedOnGrid Spawner;
 
+    private bool hasMapBeenProcessed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +34,6 @@ public class GridBasedMapGenerator : MonoBehaviour
 
     void ProcessMapGridIntoRooms()
     {
-        Grid.AssingTempMapForTesting();
-
         Vector2Int End = Spawner.Path[Spawner.Path.Count - 1];
         Grid.FillCoordinatesInMap(End.x, End.y, (int)MapType.UN_MERGEABLE);
 
@@ -151,6 +151,7 @@ public class GridBasedMapGenerator : MonoBehaviour
         if( Spawning )
         {
 
+
             Vector2Int newPotentialCoordinates = CurrentMapCoordinates;
 
             List<int> possibleDirections = new List<int>{ 0,1,2,3 };
@@ -188,14 +189,24 @@ public class GridBasedMapGenerator : MonoBehaviour
                 Spawner.Spawn = true;
                 Spawning = false;
 
+            if(!hasMapBeenProcessed) {
+                Debug.Log("StartProcessing 1 : " + Spawner.Path.Count);
                 ProcessMapGridIntoRooms();
+                hasMapBeenProcessed = true;
+            }
             }
 
             CurrentDepth++;
             if (CurrentDepth >= Depth.y)
             {
-                Spawning = false;
                 Spawner.Spawn = true;
+                Spawning = false;
+
+            if(!hasMapBeenProcessed) {
+                Debug.Log("StartProcessing 2 : " + Spawner.Path.Count);
+                ProcessMapGridIntoRooms();
+                hasMapBeenProcessed = true;
+            }
             }
         }
     }
