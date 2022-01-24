@@ -67,7 +67,7 @@ public class Map2D : MonoBehaviour
         {
             if( Map[x,y] == (int)MapType.FILLED)
             {
-                Debug.Log("Duplicate at: (" + x + "," + y + ")");
+                //Debug.Log("Duplicate at: (" + x + "," + y + ")");
             }
 
             Map[x, y] = type;
@@ -112,12 +112,13 @@ public class Map2D : MonoBehaviour
     public int GetMapTypeAtCoords(Vector2Int coords)
     {
         if(coords.x < 0 || 
-            coords.x > baseSize.x ||
+            coords.x >= baseSize.x ||
             coords.y < 0 || 
-            coords.y > baseSize.y)
+            coords.y >= baseSize.y)
         {
             return (int)MapType.EMPTY;
         }
+
         return (int)Map[coords.x, coords.y];
     }
 }

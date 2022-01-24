@@ -8,13 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 15de5a375cca3ba44bb3463640ef1350
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main_Dungeon_Scene.unity
     guid: 7d98d146dbd842c4cbcdfd0692737b24
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Antone_Playground.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Devan_PLAYGROUND.unity
     guid: e90730b5bfb49df44a316658ae2e2b40
+  - enabled: 1
+    path: Assets/Scenes/Lineage.unity
+    guid: 478f7e4b77e7bca4aa84fe94fc9e6bb8
+  - enabled: 1
+    path: Assets/Scenes/GGJ_game_field.unity
+    guid: 663848226c6eda940915a779a29b306f
   m_configObjects: {}

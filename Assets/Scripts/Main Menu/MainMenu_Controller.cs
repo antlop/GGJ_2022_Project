@@ -7,6 +7,8 @@ public class MainMenu_Controller : MonoBehaviour
     public string Sandbox_Antone = "Antone_Playground";
     public string Sandbox_Devan = "Devan_Playground";
 
+    public string GameplayLevel = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class MainMenu_Controller : MonoBehaviour
 
     public void LoadDungeonScene()
     {
-        // UnityEngine.SceneManagement.SceneManager.LoadScene(DungeonScene);
+         UnityEngine.SceneManagement.SceneManager.LoadScene(GameplayLevel);
     }
     public void LoadAntonSandbox()
     {

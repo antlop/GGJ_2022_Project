@@ -140,7 +140,7 @@ public class GridBasedMapGenerator : MonoBehaviour
                 }
             }
 
-            Debug.Log(Grid.ToString());
+            //Debug.Log(Grid.ToString());
         }
 
     }
