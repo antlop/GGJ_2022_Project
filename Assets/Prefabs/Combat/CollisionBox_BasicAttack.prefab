@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 761066469694875695}
   - component: {fileID: 8507064355496494420}
   - component: {fileID: -2496957510932274897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CollisionBox_BasicAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

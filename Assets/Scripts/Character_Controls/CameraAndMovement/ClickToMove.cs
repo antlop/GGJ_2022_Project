@@ -12,7 +12,7 @@ public class ClickToMove : MonoBehaviour
     private Vector3 TargetPosition = Vector3.zero;
     private NavMeshAgent NMAgent;
     private Vector3 TargetPoint;
-    private Animator Anim;
+   // private Animator Anim;
     public bool PauseInputUntilDestinationIsReached = false;
     public float TurnToCheckDistance = 5f;
 
@@ -24,7 +24,7 @@ public class ClickToMove : MonoBehaviour
     void Start()
     {
         NMAgent = MovingUnit.GetComponent<NavMeshAgent>();
-        Anim = MovingUnit.GetComponentInChildren<Animator>();
+    //    Anim = MovingUnit.GetComponentInChildren<Animator>();
     //    ThePlayerStats = GetComponent<PlayerStats>();
     }
 
@@ -63,6 +63,7 @@ public class ClickToMove : MonoBehaviour
             {
                 if(TurnInsteadOfMove())
                 {
+                    Debug.Log("Turning TO");
                     NMAgent.ResetPath();
                     //Anim.SetBool("Moving", false);
                     Vector3 unifiedTarget = TargetPoint;
@@ -86,9 +87,9 @@ public class ClickToMove : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             TurnToMouseClick();
-            Anim.SetTrigger("Attack1Trigger");
+            //Anim.SetTrigger("Attack1Trigger");
         }
-
+/*
         if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Attack1"))
         {
             if(this.gameObject.activeSelf == true && IsAgentOnNavMesh(this.gameObject))
@@ -99,6 +100,7 @@ public class ClickToMove : MonoBehaviour
             if (this.gameObject.activeSelf == true && IsAgentOnNavMesh(this.gameObject))
                 NMAgent.isStopped = false;
         }
+*/
     }
 
     float onMeshThreshold = 3;

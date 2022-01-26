@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 761066469694875695}
   - component: {fileID: 3412960825422043030}
   - component: {fileID: -2496957510932274897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AI_Melee_DetectionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
