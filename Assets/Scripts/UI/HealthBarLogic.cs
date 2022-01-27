@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class HealthBarLogic : MonoBehaviour
 {
-    public Character_Core_Manager PlayerCoreManager;
     public Image HealthBar;
-    // Start is called before the first frame update
-    void Start()
-    {
-        PlayerCoreManager = GameObject.FindGameObjectWithTag("Player").GetComponent<Character_Core_Manager>();
-    }
+    public Character_Core_Manager coreManager;
 
-    private void FixedUpdate()
+    // Update is called once per frame
+    void LateUpdate()
     {
-        float fillamount = (float)PlayerCoreManager.BaseStats.Health_current / (float)PlayerCoreManager.BaseStats.Health_max;
-        Debug.Log("Fill " + fillamount*100 + "%");
-        HealthBar.fillAmount = fillamount;
+        HealthBar.fillAmount = (float)coreManager.BaseStats.Health_current / (float)coreManager.BaseStats.Health_max;
     }
 }

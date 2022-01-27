@@ -7,9 +7,20 @@ public class CombatControls : MonoBehaviour
     MeleeAttack meleeAttack_Basic;
     public LayerMask ClickToMoveLayer;
 
+    public GameObject AbilityOne;
+    public KeyCode AbilityOneKey;
+    public GameObject AbilityTwo;
+    public KeyCode AbilityTwoKey;
+
+    public Animator AnimController;
+
     private void Start()
     {
         meleeAttack_Basic = GetComponent<MeleeAttack>();
+
+        UpdateKeyActivationForAbilityOne(AbilityOneKey);
+        UpdateKeyActivationForAbilityTwo(AbilityTwoKey);
+
     }
 
     private void FixedUpdate()
@@ -27,6 +38,18 @@ public class CombatControls : MonoBehaviour
             {
                 meleeAttack_Basic.MakeAttack();
             }
+
+            AnimController.SetTrigger("MeleeAttack");
         }
+    }
+
+    public void UpdateKeyActivationForAbilityOne(KeyCode key)
+    {
+        AbilityOne.GetComponent<IAbility>().SetActivationKey(key);
+    }
+
+    public void UpdateKeyActivationForAbilityTwo(KeyCode key)
+    {
+        AbilityTwo.GetComponent<IAbility>().SetActivationKey(key);
     }
 }
