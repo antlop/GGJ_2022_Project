@@ -53,6 +53,14 @@ public class BaseItemDatabase : MonoBehaviour
     {
         Items_Database = new ItemDBSerializer();
         Load();
+
+        Inventory inv = GameObject.FindObjectOfType<Inventory>();
+
+        inv.AddItemToBag(Items_Database.Items[0].GetMutableVersion());
+        inv.AddItemToBag(Items_Database.Items[0].GetMutableVersion());
+        m_Item_Base retItem = inv.PopItemFromBag(0);
+        retItem.AddAffecter(0);
+        Debug.Log("stop");
     }
 
     public Item_Base GetItemWithID(int id)

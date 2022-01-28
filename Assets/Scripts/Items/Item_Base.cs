@@ -83,6 +83,12 @@ public class Item_Base
         _name_p = initialName;
         //    _affecters_p = new Queue<Affecter>();
         Affecters = new List<int>();
+
+    }
+
+    public m_Item_Base GetMutableVersion()
+    {
+        return new m_Item_Base(this);
     }
 
     public void AddAffector(Affecter affecter)
@@ -127,6 +133,89 @@ public class Item_Base
 
         return name;
     }
+}
 
-   
+[System.Serializable]
+public struct m_Item_Base
+{
+    public string _name_p;
+    public SLOT Item_Slot;
+    public int Item_ID;
+    public int Modifier; //weapons = haste
+    public int[] Stat_Range; //weapons = damage; armor = rollable armour value
+    public int Mesh_ID;
+
+    public List<int> Affecters;
+
+    public bool Initialized;
+
+    public m_Item_Base(bool initializer)
+    {
+        _name_p = null;
+        Item_Slot = SLOT.unslotted;
+        Item_ID = -1;
+        Modifier = -1; //weapons = haste
+        Stat_Range = null; //weapons = damage; armor = rollable armour value
+        Mesh_ID = -1;
+        Affecters = null;
+
+        Initialized = false;
+    }
+
+    public m_Item_Base(Item_Base baseItem)
+    {
+        _name_p = baseItem._name_p;
+        Item_Slot = baseItem.Item_Slot;
+        Item_ID = baseItem.Item_ID;
+        Modifier = baseItem.Modifier; //weapons = haste
+        Stat_Range = baseItem.Stat_Range; //weapons = damage; armor = rollable armour value
+        Mesh_ID = baseItem.Mesh_ID;
+        Affecters = new List<int>(baseItem.Affecters);
+
+        Initialized = true;
+    }
+
+    public void AddAffector(Affecter affecter)
+    {
+        //    _affecters_p.Enqueue(affecter);
+    }
+
+    public void AddAffecter(int affecterID)
+    {
+        Affecters.Add(affecterID);
+    }
+
+    public string GetItemName()
+    {
+        string name = _name_p;
+
+        /*    foreach (Affecter affecter in _affecters_p)
+            {
+                if (affecter.IsPrefix)
+                {
+                    name = affecter.NameModifier + " " + name;
+                }
+                else
+                {
+                    name += " " + affecter.NameModifier;
+                }
+            }
+        */
+
+        for (int i = 0; i < Affecters.Count; i++)
+        {
+            Affecter affecter = AffectersDatabase.Instance.GetAffecterWithID(Affecters[i]);
+
+            if (affecter.IsPrefix)
+            {
+                name = affecter.NameModifier + " " + name;
+            }
+            else
+            {
+                name += " " + affecter.NameModifier;
+            }
+        }
+
+        return name;
+    }
 }

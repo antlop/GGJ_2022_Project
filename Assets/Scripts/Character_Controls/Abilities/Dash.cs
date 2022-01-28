@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Dash : MonoBehaviour, IAbility
 {
@@ -18,7 +19,7 @@ public class Dash : MonoBehaviour, IAbility
 
     private KeyCode ActivationKey;
 
-    public Vector3 TweenedPostion;
+    Slider CooldownSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +53,8 @@ public class Dash : MonoBehaviour, IAbility
 
             Debug.Log(ClickToMoveLayer);
             if (Physics.Raycast(ray, out hit, 9999, ClickToMoveLayer))
+
             {
-                Debug.Log("HIT GROUND");
                 ActivateDash(hit.point);
             }
         }
@@ -78,5 +79,10 @@ public class Dash : MonoBehaviour, IAbility
     public void Activate()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void SetCooldownSlider(Slider _slider)
+    {
+        CooldownSlider = _slider;
     }
 }

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MeleeAttack : MonoBehaviour
+public class MeleeAttack : MonoBehaviour, IAbility
 {
     public GameObject combatAttackColliderPrefab;
     public Transform MeleeAttackSpawnPoint;
@@ -11,6 +12,8 @@ public class MeleeAttack : MonoBehaviour
     public float cdTimer = 0f;
 
     GameObject spawnedAttackObject;
+
+    Slider CooldownSlider;
 
     public void MakeAttack()
     {
@@ -40,13 +43,30 @@ public class MeleeAttack : MonoBehaviour
         if (spawnedAttackObject)
         {
             cdTimer += Time.deltaTime;
+            CooldownSlider.value = 1 - (cdTimer / CooldownTime);
 
             if (cdTimer >= CooldownTime)
             {
+                CooldownSlider.value = 0;
                 cdTimer = 0;
                 DestroyImmediate(spawnedAttackObject);
                 spawnedAttackObject = null;
             }
         }
+    }
+
+    public void SetActivationKey(KeyCode key)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Activate()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetCooldownSlider(Slider _slider)
+    {
+        CooldownSlider = _slider;
     }
 }
