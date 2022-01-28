@@ -25,7 +25,7 @@ public class CombatControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && meleeAttack_Basic.IsAttackOffCooldown())
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,7 +38,7 @@ public class CombatControls : MonoBehaviour
             {
                 meleeAttack_Basic.MakeAttack();
             }
-
+            
             AnimController.SetTrigger("MeleeAttack");
         }
     }

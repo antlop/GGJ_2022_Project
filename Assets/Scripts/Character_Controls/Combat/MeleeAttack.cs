@@ -7,12 +7,14 @@ public class MeleeAttack : MonoBehaviour
     public GameObject combatAttackColliderPrefab;
     public Transform MeleeAttackSpawnPoint;
 
-    int spawnCount = 0;
+    public float CooldownTime = 1.0f;
+    public float cdTimer = 0f;
+
     GameObject spawnedAttackObject;
 
     public void MakeAttack()
     {
-        if (spawnedAttackObject == null && combatAttackColliderPrefab) {
+        if ( spawnedAttackObject == null && combatAttackColliderPrefab) {
             spawnedAttackObject = Instantiate(combatAttackColliderPrefab, MeleeAttackSpawnPoint.position, MeleeAttackSpawnPoint.rotation);
             spawnedAttackObject.GetComponent<AttackCollisionDetection>().DamageToApply = new Vector2Int(1,4);
         }
@@ -20,8 +22,7 @@ public class MeleeAttack : MonoBehaviour
 
     public void MakeAttackTowardMouseClick(Vector3 mouseClickPoint)
     {
-        Debug.Log("HEREERE");
-        if (spawnedAttackObject == null && combatAttackColliderPrefab)
+        if ( spawnedAttackObject == null && combatAttackColliderPrefab)
         {
             spawnedAttackObject = Instantiate(combatAttackColliderPrefab, MeleeAttackSpawnPoint.position, MeleeAttackSpawnPoint.rotation);
             spawnedAttackObject.GetComponent<AttackCollisionDetection>().DamageToApply = new Vector2Int(1, 4);
@@ -29,14 +30,20 @@ public class MeleeAttack : MonoBehaviour
         }
     }
 
+    public bool IsAttackOffCooldown()
+    {
+        return cdTimer <= 0f;
+    }
+
     private void LateUpdate()
     {
         if (spawnedAttackObject)
         {
-            spawnCount++;
-            if (spawnCount >= 90)
+            cdTimer += Time.deltaTime;
+
+            if (cdTimer >= CooldownTime)
             {
-                spawnCount = 0;
+                cdTimer = 0;
                 DestroyImmediate(spawnedAttackObject);
                 spawnedAttackObject = null;
             }

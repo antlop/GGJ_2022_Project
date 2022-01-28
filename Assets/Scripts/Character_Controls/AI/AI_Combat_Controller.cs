@@ -8,7 +8,7 @@ public class AI_Combat_Controller : MonoBehaviour
 
     public bool CloseEnoughToMeleeAttack = false;
     public float MeleeAttackSpeed = 1.75f;
-    float MeleeAttackBucket = 0f;
+    [SerializeField] float MeleeAttackBucket = 0f;
 
     private void Start()
     {
@@ -17,14 +17,16 @@ public class AI_Combat_Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (MeleeAttackBucket < MeleeAttackSpeed)
+        if (MeleeAttackBucket < MeleeAttackSpeed && CloseEnoughToMeleeAttack)
         {
             MeleeAttackBucket += Time.deltaTime;
         }
 
-        if( CloseEnoughToMeleeAttack )
+        if( CloseEnoughToMeleeAttack && MeleeAttackBucket >= MeleeAttackSpeed)
         {
             meleeAttack_Basic.MakeAttack();
+            GetComponent<Animator>().SetTrigger("MeleeAttack");
+            MeleeAttackBucket = 0;
         }
     }
 }
