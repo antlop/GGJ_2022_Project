@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 8654898715141349157}
   - component: {fileID: 1571865633179372450}
   - component: {fileID: 5217211344929930042}
+  - component: {fileID: 8929962498867571484}
   m_Layer: 0
   m_Name: Base_Enemy
   m_TagString: Player
@@ -661,6 +662,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8929962498867571484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7823899946607474212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44a9929c8349de48b1e5047ff7293a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health_current: 11
+  Health_max: 11
+  Brawn: 1
+  Attunement: 1
+  Fortitude: 1
 --- !u!1 &8524575532181215658
 GameObject:
   m_ObjectHideFlags: 0

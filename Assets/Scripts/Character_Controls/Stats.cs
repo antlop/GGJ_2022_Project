@@ -11,6 +11,8 @@ public class Stats : MonoBehaviour
     public int Attunement = 0;    //intellegence
     public int Fortitude = 0;     //constitution
 
+    public float Haste = 1f;
+
     public void setMaxHealth(int value)
     {
         Health_max = value;

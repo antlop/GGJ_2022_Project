@@ -12,8 +12,6 @@ public class AttackCollisionDetection : MonoBehaviour
     {
         if( collidedWithObjectWeAreLookingFor(collision.transform.tag))
         {
-            Debug.Log("Hit " + collision.transform.name);
-
             collision.transform.GetComponent<Character_Core_Manager>().TakeDamage(Random.Range(DamageToApply.x, DamageToApply.y+1));
         }
     }

@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public interface IAbility
 {
+    public Sprite AbilityIcon { get; set; }
 
     public void SetActivationKey(KeyCode key);
-
-    public void Activate();
 
     public void SetCooldownSlider(Slider _slider);
 }

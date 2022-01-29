@@ -15,11 +15,15 @@ public class MeleeAttack : MonoBehaviour, IAbility
 
     Slider CooldownSlider;
 
+    public Sprite AbilityIcon { get; set; }
+
     public void MakeAttack()
     {
         if ( spawnedAttackObject == null && combatAttackColliderPrefab) {
             spawnedAttackObject = Instantiate(combatAttackColliderPrefab, MeleeAttackSpawnPoint.position, MeleeAttackSpawnPoint.rotation);
             spawnedAttackObject.GetComponent<AttackCollisionDetection>().DamageToApply = new Vector2Int(1,4);
+            Destroy(spawnedAttackObject, 0.15f);
+            cdTimer = 0;
         }
     }
 
@@ -30,27 +34,30 @@ public class MeleeAttack : MonoBehaviour, IAbility
             spawnedAttackObject = Instantiate(combatAttackColliderPrefab, MeleeAttackSpawnPoint.position, MeleeAttackSpawnPoint.rotation);
             spawnedAttackObject.GetComponent<AttackCollisionDetection>().DamageToApply = new Vector2Int(1, 4);
             spawnedAttackObject.transform.Rotate(transform.parent.position, Vector3.Angle(spawnedAttackObject.transform.forward, (mouseClickPoint - spawnedAttackObject.transform.position)));
+            Destroy(spawnedAttackObject, 0.15f);
+            cdTimer = 0;
         }
     }
 
     public bool IsAttackOffCooldown()
     {
-        return cdTimer <= 0f;
+        return cdTimer == CooldownTime;
     }
 
     private void LateUpdate()
     {
-        if (spawnedAttackObject)
+
+        if (cdTimer < CooldownTime)
         {
             cdTimer += Time.deltaTime;
-            CooldownSlider.value = 1 - (cdTimer / CooldownTime);
-
             if (cdTimer >= CooldownTime)
             {
-                CooldownSlider.value = 0;
-                cdTimer = 0;
-                DestroyImmediate(spawnedAttackObject);
-                spawnedAttackObject = null;
+                cdTimer = CooldownTime;
+            }
+
+            if (CooldownSlider)
+            {
+                CooldownSlider.value = 1 - (cdTimer / CooldownTime);
             }
         }
     }

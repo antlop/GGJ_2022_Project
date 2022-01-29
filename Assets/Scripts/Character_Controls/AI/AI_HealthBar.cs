@@ -10,6 +10,9 @@ public class AI_HealthBar : MonoBehaviour
 
     private void LateUpdate()
     {
-        hpBar.value = (float)charManager.BaseStats.Health_current / (float)charManager.BaseStats.Health_max;
+        if (hpBar && charManager && charManager.BaseStats)
+        {
+            hpBar.value = (float)charManager.BaseStats.Health_current / (float)charManager.BaseStats.Health_max;
+        }
     }
 }

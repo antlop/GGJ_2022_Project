@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LightningSpin : MonoBehaviour, IAbility
+public class RageTornado : MonoBehaviour, IAbility
 {
     public GameObject combatAOEColliderPrefab;
 
@@ -11,6 +11,7 @@ public class LightningSpin : MonoBehaviour, IAbility
     public float cdTimer = 0f;
 
     private KeyCode ActivationKey;
+    private bool IsRightMouseButton = false;
 
     [SerializeField] private bool Spinning = false;
 
@@ -20,11 +21,22 @@ public class LightningSpin : MonoBehaviour, IAbility
 
     public ParticleSystem SpinFX;
 
+    Transform player;
+
+    public Sprite IconForActionBar;
+
+    public Sprite AbilityIcon { get { return IconForActionBar; } set { IconForActionBar = value; } }
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     public void MakeAttack()
     {
         if (spawnedAttackObject == null && combatAOEColliderPrefab)
         {
-            Vector3 spawnPoint = transform.parent.position;
+            Vector3 spawnPoint = player.position;
             spawnPoint.y = 2f;
 
             spawnedAttackObject = Instantiate(combatAOEColliderPrefab, spawnPoint, Quaternion.identity);
@@ -36,7 +48,7 @@ public class LightningSpin : MonoBehaviour, IAbility
     {
         if (combatAOEColliderPrefab)
         {
-            Vector3 spawnPoint = transform.parent.position;
+            Vector3 spawnPoint = player.position;
             spawnPoint.y = 2f;
 
             spawnedAttackObject = Instantiate(combatAOEColliderPrefab, spawnPoint, Quaternion.identity);
@@ -51,12 +63,12 @@ public class LightningSpin : MonoBehaviour, IAbility
 
     private void LateUpdate()
     {
-        if( IsAttackOffCooldown() && Input.GetKeyUp(ActivationKey))
+        if (((IsRightMouseButton && Input.GetMouseButton(1)) || Input.GetKeyUp(ActivationKey)) && IsAttackOffCooldown())
         {
             Spinning = true;
             MakeAttack();
-            transform.parent.GetComponent<Animator>().SetTrigger("LightningSpin");
-            Destroy(Instantiate(SpinFX, new Vector3(0, 2, 0) + transform.parent.position, Quaternion.identity, transform.parent), 0.9f);
+            player.GetComponent<Animator>().SetTrigger("RageTornado");
+            Destroy(Instantiate(SpinFX, new Vector3(0, 2, 0) + player.position, Quaternion.identity, player), 0.9f);
         }
 
         if (Spinning)
@@ -78,6 +90,10 @@ public class LightningSpin : MonoBehaviour, IAbility
     public void SetActivationKey(KeyCode key)
     {
         ActivationKey = key;
+        if (ActivationKey == KeyCode.Caret)
+        {
+            IsRightMouseButton = true;
+        }
     }
 
     public void Activate()

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class Dash : MonoBehaviour, IAbility
+public class Slam : MonoBehaviour, IAbility
 {
     public Rigidbody RB;
     public NavMeshAgent NMAgent;
@@ -18,25 +18,35 @@ public class Dash : MonoBehaviour, IAbility
     public float DashSpeed = 50;
 
     private KeyCode ActivationKey;
+    private bool IsRightMouseButton = false;
 
     Slider CooldownSlider;
+
+    Transform player;
+
+    public Sprite IconForActionBar;
+
+    public Sprite AbilityIcon { get { return IconForActionBar; } set { IconForActionBar = value; } }
 
     // Start is called before the first frame update
     void Start()
     {
-        NMAgent = transform.parent.GetComponentInChildren<NavMeshAgent>();
-        RB = transform.parent.GetComponentInChildren<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        NMAgent = player.GetComponentInChildren<NavMeshAgent>();
+        RB = player.GetComponentInChildren<Rigidbody>();
     }
 
     public void ActivateDash(Vector3 MouseClickPosition)
     {
-
+        player.GetComponent<Animator>().SetTrigger("Slam");
+        player.GetComponent<ClickToMove>().enabled = false;
+      
         Dashing = true;
 
-        MouseClickPosition.y = transform.parent.position.y;
-        transform.parent.position = MouseClickPosition;
+        MouseClickPosition.y = player.position.y;
+        player.position = MouseClickPosition;
 
-        LeanTween.value(gameObject, transform.parent.position, MouseClickPosition, DashSpeed).setEasePunch();
+        LeanTween.value(gameObject, player.position, MouseClickPosition, DashSpeed).setEasePunch();
 
         NMAgent.isStopped = true;
         NMAgent.ResetPath();
@@ -44,7 +54,7 @@ public class Dash : MonoBehaviour, IAbility
 
     private void Update()
     {
-        if (Input.GetKeyUp(ActivationKey))
+        if ((IsRightMouseButton && Input.GetMouseButton(1)) || Input.GetKeyUp(ActivationKey))
         {
             Dashing = true;
 
@@ -66,6 +76,8 @@ public class Dash : MonoBehaviour, IAbility
             {
                 DashDurationBucket = 0f;
                 Dashing = false;
+
+                player.GetComponent<ClickToMove>().enabled = true;
             }
         }
 
@@ -74,6 +86,10 @@ public class Dash : MonoBehaviour, IAbility
     public void SetActivationKey(KeyCode key)
     {
         ActivationKey = key;
+        if (ActivationKey == KeyCode.Caret)
+        {
+            IsRightMouseButton = true;
+        }
     }
 
     public void Activate()

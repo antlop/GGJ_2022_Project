@@ -15,6 +15,7 @@ public class ClickToMove : MonoBehaviour
    // private Animator Anim;
     public bool PauseInputUntilDestinationIsReached = false;
     public float TurnToCheckDistance = 5f;
+    private float storedSpeed = 0f;
 
     //private PlayerStats ThePlayerStats;
 
@@ -24,6 +25,7 @@ public class ClickToMove : MonoBehaviour
     void Start()
     {
         NMAgent = MovingUnit.GetComponent<NavMeshAgent>();
+        storedSpeed = NMAgent.speed;
     //    Anim = MovingUnit.GetComponentInChildren<Animator>();
     //    ThePlayerStats = GetComponent<PlayerStats>();
     }
@@ -63,7 +65,6 @@ public class ClickToMove : MonoBehaviour
             {
                 if(TurnInsteadOfMove())
                 {
-                    Debug.Log("Turning TO");
                     NMAgent.ResetPath();
                     //Anim.SetBool("Moving", false);
                     Vector3 unifiedTarget = TargetPoint;
@@ -72,7 +73,7 @@ public class ClickToMove : MonoBehaviour
                 } else
                 {
                     NMAgent.SetDestination(TargetPoint);
-                    NMAgent.speed = 7f;
+                   // NMAgent.speed = storedSpeed;
                     //Anim.SetBool("Moving", true);
                 }
             }
